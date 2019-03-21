@@ -22,6 +22,12 @@ module Ruboty
       )
 
       on(
+        /delete all aliases/,
+        description: "Delete all aliases",
+        name: "delete_all_aliases",
+      )
+
+      on(
         //,
         description: "Resolve alias if registered",
         name: "resolve",
@@ -41,6 +47,11 @@ module Ruboty
         else
           message.reply("Not found")
         end
+      end
+
+      def delete_all_aliases(message)
+        table.clear
+        message.reply("Deleted all aliases")
       end
 
       def list(message)
